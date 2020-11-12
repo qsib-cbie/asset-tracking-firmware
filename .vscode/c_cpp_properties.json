@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "defines": [],
+            "macFrameworkPath": [],
+            "compileCommands": "${workspaceFolder}/build_app/compile_commands.json",
+            "intelliSenseMode": "gcc-arm",
+            "cppStandard": "c++17",
+            "cStandard": "c99",
+            "compilerPath": "/Users/jwtrueb/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-gcc",
+            "forcedInclude": [
+                "${workspaceFolder}/build_app/zephyr/include/generated/autoconf.h"
+            ]
+        }
+    ],
+    "version": 4
+}

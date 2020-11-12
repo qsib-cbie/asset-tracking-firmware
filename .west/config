@@ -1,0 +1,4 @@
+[manifest]
+path = apps
+[zephyr]
+base = zephyr

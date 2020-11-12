@@ -1,0 +1,10 @@
+# west managed submodules
+bootloader
+zephyr
+modules
+tools
+
+# artifact directories
+build*
+.DS_Store
+tmp
