@@ -1,4 +1,4 @@
-# Milk Sensing Firmware
+# Asset Tracking Firmware
 
 The firmware is written using zephyrproject, https://docs.zephyrproject.org/latest/boards/arm/nrf52dk_nrf52832/doc/index.html, with lightweight C++ templated constructs for managing lifecycle functionality.
 
