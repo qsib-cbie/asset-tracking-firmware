@@ -8,3 +8,4 @@ tools
 build*
 .DS_Store
 tmp
+compile_commands.json

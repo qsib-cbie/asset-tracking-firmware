@@ -66,6 +66,7 @@ bootloader_flash: bootloader
 .PHONY: debug_app-%
 debug_app-%: build_${APP_BUILD_DIR}/overlay-device-%.conf
 	west build -p auto -d build_${APP_BUILD_DIR} -b ${BOARD} ${APP_SRC_DIR} -- -DOVERLAY_CONFIG=overlay-debug.conf
+	cp build_${APP_BUILD_DIR}/compile_commands.json .
 
 .PHONY: debug_app_flash-%
 debug_app_flash-%: debug_app-%
@@ -75,6 +76,7 @@ debug_app_flash-%: debug_app-%
 app-%: build_${APP_BUILD_DIR}/overlay-device-%.conf
 	west build -p auto -d build_${APP_BUILD_DIR} --board=${BOARD} ${APP_SRC_DIR} ${EXTRA_BUILD_OPTS}
 	west sign -t imgtool -d build_${APP_BUILD_DIR} -- --key ${BOOTLOADER_KEY}
+	cp build_${APP_BUILD_DIR}/compile_commands.json .
 
 .PHONY: app_flash-%
 app_flash-%: app-%
