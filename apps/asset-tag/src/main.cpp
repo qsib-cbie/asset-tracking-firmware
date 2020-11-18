@@ -16,6 +16,8 @@
 #include <numeric>
 #include <tuple>
 
+#include <greetings.h>
+
 static K_THREAD_STACK_DEFINE(wake_work_stack, 2048);
 
 
@@ -35,6 +37,14 @@ static void notify_error(const char* msg, const T ... msg_args) {
 
 void main() {
 	LOG_INF("Version %s: Beginning main() ...", VERSION);
+	rust_init();
+	for(size_t i = 0; i < 10; i++) {
+		char* greeting = rust_greeting("Zephyr");
+		LOG_INF("Rust says '%s'", log_strdup(greeting));
+		rust_greeting_free(greeting);
+		log_process(false);
+		k_sleep(K_MSEC(100));
+	}
 
 	// // Enable wake from deep sleep over gpio
 	// nrf_gpio_cfg_input(DT_GPIO_PIN(DT_NODELABEL(custombutton), gpios), NRF_GPIO_PIN_PULLUP);

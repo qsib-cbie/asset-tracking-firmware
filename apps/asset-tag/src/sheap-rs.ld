@@ -1,0 +1,4 @@
+SECTION_PROLOGUE(.sheap,,ALIGN(4))
+{
+    __sheap = .;
+} GROUP_LINK_IN(RAMABLE_REGION)
